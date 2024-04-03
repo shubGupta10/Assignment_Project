@@ -1,13 +1,10 @@
 import  express  from "express";
+import { upload } from "../middlewares/multer.js";
+import { uploadProfilePicture } from "../controllers/profileController.js";
+
 const router = express.Router();
 
-router.get("/profile", (req,res)=> {
-    res.send("Hello, This is profile")
-});
 
-router.get("/profile/update", (req,res)=> {
-    res.send("Hello, This is from Profile update");
-});
-
+router.post("/upload", upload.single("profilePicture"), uploadProfilePicture);
 
 export default router;
