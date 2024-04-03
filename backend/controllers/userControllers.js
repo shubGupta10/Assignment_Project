@@ -1,7 +1,7 @@
 import { User } from "../models/userModel";
 
 
-export const createUser = async(res,req) => {
+export const createUser = async(req,res) => {
     try {
         const newUser = await User.create(req.body);
         res.status(201).json(newUser);
@@ -37,7 +37,7 @@ export const getUserById = async (req, res) => {
 };
 
 
-export const updateUser = async (res,req) => {
+export const updateUser = async (req,res) => {
     try {
         const userExist =  await User.exists();
         if(!userExist){

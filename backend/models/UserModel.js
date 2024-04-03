@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         min: [8, "Password must be atleast 8 character long"],
         max: [10, "Password must be 10 characters long"]
+    },
+
+    profileImageData: {
+        type: Buffer
     }
 
 });
