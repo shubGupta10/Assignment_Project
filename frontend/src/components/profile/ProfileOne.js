@@ -3,7 +3,7 @@ import React from 'react';
 function Profile() {
   return (
     <>
-      <h1 className="text-3xl font-bold text-red-500 py-4 mb-8">Dribbble</h1>
+      <h1 className="text-3xl font-bold italic text-red-500 py-4 mb-8">Dribble</h1>
       <div className="bg-gray-100 ">
         <div className="max-w-xl mx-auto px-3 py-12">
           <h2 className="text-3xl font-bold mb-8">Welcome! Let's create your profile</h2>
