@@ -1,12 +1,12 @@
 import React from 'react';
-import Signup from './components/Signup/Signup';
-import Profile from './components/Signup/Profile';
+import ProfileTwo from './components/profile/ProfileTwo.js';
 
 function App() {
   return (
     <>
     {/* <Signup/> */}
-    <Profile/>
+    {/* <ProfileOne/> */}
+     <ProfileTwo/>
     </>
   );
 }
