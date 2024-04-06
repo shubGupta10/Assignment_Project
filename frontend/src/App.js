@@ -1,13 +1,12 @@
 import React from 'react';
-import Mail from './components/email/Mail.js';
-
+import Signup from './components/Signup/Signup';
 function App() {
   return (
     <>
-    {/* <Signup/> */}
+    <Signup/>
     {/* <ProfileOne/> */}
      {/* <ProfileTwo/> */}
-     <Mail/>
+     {/* <Mail/> */}
     </>
   );
 }
