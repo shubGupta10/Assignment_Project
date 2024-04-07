@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function ProfileTwo() {
   const navigate = useNavigate();
@@ -52,8 +52,11 @@ function ProfileTwo() {
             </div>
           </div>
 
-          <div className='flex justify-center' >
+          <div className='flex justify-center'>
             <button onClick={handleClick} className="mt-8 bg-red-500 w-52 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-600 transition duration-300">Finish</button>
+          </div>
+          <div className='text-center'>
+            <Link to={"/profile-one"} className='mt-12'>or Return</Link>
           </div>
         </div>
       </div>

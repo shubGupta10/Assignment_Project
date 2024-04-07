@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-import {useNavigate} from "react-router-dom"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
-
-
   const [profileImage, setProfileImage] = useState(null);
+  const [loading, setLoading] = useState(false); // State to track loading
   const navigate = useNavigate();
 
   const handleImageChange = (e) => {
@@ -13,29 +12,29 @@ function Profile() {
     setProfileImage(file);
   };
 
-
   const handleUpload = async () => {
+    setLoading(true); // Set loading to true when button is clicked
     try {
       const formData = new FormData();
       formData.append("profilePicture", profileImage);
       const response = await fetch("http://localhost:8000/api/profile/upload", {
         method: "POST",
-        body: formData
+        body: formData,
       });
-      if(response.ok){
+      if (response.ok) {
         const data = await response.json();
         console.log("Uploaded image URL:", data.imageUrl);
-        navigate("/profile-two")
+        navigate("/profile-two");
         console.log("Images uploaded!");
-      } else{
+      } else {
         console.log("Failed to upload image.", response.statusText);
       }
     } catch (error) {
       console.error("Error uploading image.", error);
+    } finally {
+      setLoading(false); // Reset loading state once request is complete
     }
-  }
-
-
+  };
 
   return (
     <>
@@ -69,7 +68,13 @@ function Profile() {
             />
           </div>
 
-          <button onClick={handleUpload} className="w-60 bg-red-500 text-white font-bold py-3 rounded-lg hover:bg-red-600 transition duration-300">Next</button>
+          <button
+            onClick={handleUpload}
+            className="w-60 bg-red-500 text-white font-bold py-3 rounded-lg hover:bg-red-600 transition duration-300"
+            disabled={loading} // Disable button when loading is true
+          >
+            {loading ? "Please wait..." : "Next"} {/* Change button text based on loading state */}
+          </button>
         </div>
       </div>
     </>
