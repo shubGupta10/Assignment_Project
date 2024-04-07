@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const [profileImage, setProfileImage] = useState(null);
-  const [loading, setLoading] = useState(false); // State to track loading
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleImageChange = (e) => {
@@ -13,7 +13,7 @@ function Profile() {
   };
 
   const handleUpload = async () => {
-    setLoading(true); // Set loading to true when button is clicked
+    setLoading(true); 
     try {
       const formData = new FormData();
       formData.append("profilePicture", profileImage);
@@ -32,7 +32,7 @@ function Profile() {
     } catch (error) {
       console.error("Error uploading image.", error);
     } finally {
-      setLoading(false); // Reset loading state once request is complete
+      setLoading(false); 
     }
   };
 

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {useNavigate} from "react-router-dom";
+import { UserContext } from '../../Context/UserContext.js';
 
 function Navbar() {
+  const { profileImageUrl } = useContext(UserContext);
   const navigate = useNavigate();
-  const profileImageUrl = "http://res.cloudinary.com/dkp6hsvoy/image/upload/v1712409984/qwwdgzjgh47b2izmd4md.jpg";
 
 
   const handleClick = () => {
@@ -24,7 +25,9 @@ function Navbar() {
           <a className="mr-5">Hire Designers</a>
         </nav>
         <div className="flex items-center">
-          <img src={profileImageUrl} alt="Profile" className="w-14 h-12 rounded-full mr-2" />
+        {profileImageUrl && (
+            <img src={profileImageUrl} alt="Profile" className="w-14 h-12 rounded-full mr-2" />
+          )}
           <button className="inline-flex items-center bg-pink-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-pink-900 rounded text-base mt-4 md:mt-0 mr-4">
             Upload
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">

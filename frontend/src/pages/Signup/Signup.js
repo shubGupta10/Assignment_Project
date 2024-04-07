@@ -1,14 +1,13 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 
 function Signup() {
   const { setEmail } = useContext(UserContext);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false); // State to track loading
+  const [loading, setLoading] = useState(false); 
 
   const [formData, setFormData] = useState({
     username: "",
@@ -38,7 +37,7 @@ function Signup() {
       console.log(error);
       toast.error("Error creating account. Please try again...");
     } finally {
-      setLoading(false); // Reset loading state once request is complete
+      setLoading(false); 
     }
   };
 

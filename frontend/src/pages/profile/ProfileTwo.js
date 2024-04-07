@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ProfileTwo() {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ function ProfileTwo() {
 
   const handleClick = () =>  {
     navigate("/mail");
-  }
+  };
 
   return (
     <>
@@ -22,7 +22,6 @@ function ProfileTwo() {
           <p className="text-gray-600 mb-8">Select the options that better describe you. Don't worry, you can explore other options later.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Box 1 */}
             <div 
               className={`bg-white rounded-lg shadow-md p-2 flex flex-col items-center cursor-pointer ${selectedBox === 0 ? 'border-2 border-red-500' : ''}`}
               onClick={() => handleBoxClick(0)}
@@ -30,9 +29,7 @@ function ProfileTwo() {
               <img src="https://i.pinimg.com/736x/3a/94/7f/3a947f9238d4d843959a216bbb83a614.jpg" alt="Image 1" className="w-64 h-64 rounded-full mb-4" />
               <p className="text-lg p-1 font-bold">I'm a designer looking to share my work.</p>
               {selectedBox === 0 && <span className="text-red-900 text-3xl">&#9989;</span>}
-              
             </div>
-            {/* Box 2 */}
             <div 
               className={`bg-white rounded-lg shadow-md p-2  flex flex-col items-center cursor-pointer ${selectedBox === 1 ? 'border-2 border-red-500' : ''}`}
               onClick={() => handleBoxClick(1)}
@@ -41,7 +38,6 @@ function ProfileTwo() {
               <p className="text-lg p-1 font-bold">I'm looking to hire a designer.</p>
               {selectedBox === 1 && <span className="text-red-900 font-extrabold text-3xl">&#9989;</span>}
             </div>
-            {/* Box 3 */}
             <div 
               className={`bg-white rounded-lg shadow-md p-2 flex flex-col items-center cursor-pointer ${selectedBox === 2 ? 'border-2 border-red-500' : ''}`}
               onClick={() => handleBoxClick(2)}
