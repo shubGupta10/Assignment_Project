@@ -1,8 +1,14 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 function Navbar() {
-  // Sample profile image URL (replace it with the actual image URL once uploaded)
+  const navigate = useNavigate();
   const profileImageUrl = "http://res.cloudinary.com/dkp6hsvoy/image/upload/v1712409984/qwwdgzjgh47b2izmd4md.jpg";
+
+
+  const handleClick = () => {
+    navigate("/profile-one")
+  }
 
   return (
     <header className="text-black body-font">
@@ -25,7 +31,7 @@ function Navbar() {
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </button>
-          <button className="inline-flex items-center bg-gray-300 text-gray-700 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0">Profile
+          <button onClick={handleClick} className="inline-flex items-center bg-gray-300 text-gray-700 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0">Profile
             <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
               <path d="M12 2c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zM4.77 18.77c-2.11-2.11-3.27-4.94-3.27-7.95s1.16-5.84 3.27-7.95c2.11 2.11 3.27 4.94 3.27 7.95s-1.16 5.84-3.27 7.95z"></path>
             </svg>

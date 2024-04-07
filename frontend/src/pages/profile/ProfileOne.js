@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import {useNavigate} from "react-router-dom"
 
 function Profile() {
 
 
   const [profileImage, setProfileImage] = useState(null);
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     console.log("Button working");
@@ -16,7 +18,6 @@ function Profile() {
     try {
       const formData = new FormData();
       formData.append("profilePicture", profileImage);
-
       const response = await fetch("http://localhost:8000/api/profile/upload", {
         method: "POST",
         body: formData
@@ -24,6 +25,7 @@ function Profile() {
       if(response.ok){
         const data = await response.json();
         console.log("Uploaded image URL:", data.imageUrl);
+        navigate("/profile-two")
         console.log("Images uploaded!");
       } else{
         console.log("Failed to upload image.", response.statusText);

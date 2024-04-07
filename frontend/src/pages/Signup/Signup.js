@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import {toast} from "react-toastify"
-
-
+import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function Signup() {
     const [formData, setFormData] = useState({
@@ -12,6 +12,7 @@ function Signup() {
       password: "",
     });
 
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value});
@@ -20,10 +21,10 @@ function Signup() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post("http://localhost:8000/api/auth/signup", formData);
+        const response = await axios.post("http://localhost:8000/api/users/signup", formData);
         toast.success('Account created successfully!');
+        navigate("/profile-one")
         console.log(response.data);
-
       } catch (error) {
         console.log(error);
         toast.error("Error creating account. Please try again...")
@@ -68,6 +69,7 @@ function Signup() {
                 <button type="submit" className="px-8 py-2 rounded font-bold cursor-pointer transition duration-150 ease-linear bg-red-500 text-white hover:bg-red-800">Create Account</button>
               </div>
             </form>
+            <Link to="/profile-one" className="block mt-4 text-blue-500 hover:text-blue-700">Go to Profile One</Link>
           </div>
         </div>
       </div>

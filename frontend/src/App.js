@@ -1,16 +1,13 @@
-import React from 'react';
-// import Signup from './components/Signup/Signup';
-// import ProfileOne from "./components/profile/ProfileOne.js"
-import Mail from "./components/email/Mail.js"
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import UserRoutes from './routes/UserRoutes.js'
+
 function App() {
   return (
-    <>
-    {/* <Signup/> */}
-    {/* <ProfileOne/> */}
-     {/* <ProfileTwo/> */}
-     <Mail/>
-    </>
+    <Router>
+    <UserRoutes/>
+    </Router>
   );
 }
 
-export default App;
+export default App

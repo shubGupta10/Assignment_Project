@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 
 function ProfileTwo() {
+  const navigate = useNavigate();
   const [selectedBox, setSelectedBox] = useState(null);
 
   const handleBoxClick = (boxIndex) => {
     setSelectedBox(boxIndex);
   };
+
+  const handleClick = () =>  {
+    navigate("/mail");
+  }
 
   return (
     <>
@@ -47,7 +53,7 @@ function ProfileTwo() {
           </div>
 
           <div className='flex justify-center' >
-            <button className="mt-8 bg-red-500 w-52 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-600 transition duration-300">Finish</button>
+            <button onClick={handleClick} className="mt-8 bg-red-500 w-52 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-600 transition duration-300">Finish</button>
           </div>
         </div>
       </div>

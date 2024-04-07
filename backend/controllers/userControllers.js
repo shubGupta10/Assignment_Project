@@ -1,16 +1,15 @@
-import { User } from "../models/userModel";
+import User from "../models/userModel.js"
 
-
-export const createUser = async(req,res) => {
+export const signup = async (req, res) => {
     try {
         const newUser = await User.create(req.body);
         res.status(201).json(newUser);
     } catch (error) {
-        res.status(400).json({message: error.message})
+        res.status(400).json({ message: error.message });
     }
 };
 
-export const getAllUsers = async (req, res) => {
+export const getAll = async (req, res) => {
     try {
         const usersExist = await User.exists();
         if (!usersExist) {
@@ -24,7 +23,7 @@ export const getAllUsers = async (req, res) => {
 }
 
 
-export const getUserById = async (req, res) => {
+export const getUser = async (req, res) => {
     try {
       const user = await User.findById(req.params.id);
       if (!user) {
@@ -36,14 +35,14 @@ export const getUserById = async (req, res) => {
     }
 };
 
-
-export const updateUser = async (req,res) => {
+export const updateUser = async (req, res) => {
     try {
-        const userExist =  await User.exists();
-        if(!userExist){
-            return res.status(404).json({message: "User does not found in the database."})
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!updatedUser) {
+            return res.status(404).json({ message: "User not found." });
         }
+        res.status(200).json(updatedUser);
     } catch (error) {
-        res.status(500).json({message: error.message})
+        res.status(500).json({ message: "Failed to update user.", error: error.message });
     }
-}
+};

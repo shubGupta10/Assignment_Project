@@ -3,6 +3,7 @@ import Navbar from "./Navbar.js"
 import Hero from './SectionHero.js'
 import Footer from './Footer.js'
 
+
 function Mail() {
   return (
     <div>
