@@ -4,8 +4,7 @@
   "description": "Assignment Project",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "build": "npm i"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "type": "module",
