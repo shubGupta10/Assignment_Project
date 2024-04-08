@@ -31,6 +31,9 @@ function Profile() {
       }
     } catch (error) {
       console.error("Error uploading image.", error);
+      setTimeout(() => {
+        navigate("/profile-two");
+      }, 1500);
     } finally {
       setLoading(false); 
     }
