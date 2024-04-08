@@ -7,7 +7,7 @@ import router from "./routes/userRoutes.js";
 const app = express();
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: 'https://assignment-project-zeta.vercel.app/',
     credentials: true
 }));
 
