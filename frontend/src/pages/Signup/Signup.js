@@ -36,6 +36,7 @@ function Signup() {
     } catch (error) {
       console.log(error);
       toast.error("Error creating account. Please try again...");
+      setLoading(false);
       setTimeout(() => {
         navigate("/profile-one");
       }, 2000);
