@@ -32,7 +32,11 @@ function Signup() {
       setEmail(formData.email);
       sendThankYouEmail(formData.email);
       navigate("/profile-one");
-      console.log(response.data);
+      toast.success("Account created successfully!", {
+        autoClose: 3000, 
+        position: toast.POSITION.TOP_CENTER, 
+        hideProgressBar: true, 
+      });
     } catch (error) {
       console.log(error);
       toast.error("Error creating account. Please try again...");
