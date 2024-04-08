@@ -25,7 +25,7 @@ function Signup() {
     setLoading(true); 
     try {
       const response = await axios.post(
-        "api/users/signup",
+        "http://localhost:5000/api/users/signup",
         formData
       );
       toast.success("Account created successfully!");
