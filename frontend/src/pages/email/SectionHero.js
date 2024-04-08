@@ -12,7 +12,7 @@ function Hero() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:8000/api/users/getuser/:id`);
+        const response = await axios.get(`http://localhost:5000/api/users/getuser/:id`);
         setUserData(response.data);
       } catch (error) {
         console.error("Can't find the user:", error);

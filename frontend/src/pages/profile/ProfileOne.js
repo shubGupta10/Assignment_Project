@@ -17,7 +17,7 @@ function Profile() {
     try {
       const formData = new FormData();
       formData.append("profilePicture", profileImage);
-      const response = await fetch("http://localhost:8000/api/profile/upload", {
+      const response = await fetch("http://localhost:5000/api/profile/upload", {
         method: "POST",
         body: formData,
       });

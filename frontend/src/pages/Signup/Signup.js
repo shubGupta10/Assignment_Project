@@ -22,10 +22,10 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true when form is submitted
+    setLoading(true); 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/users/signup",
+        "http://localhost:5000/api/users/signup",
         formData
       );
       toast.success("Account created successfully!");
