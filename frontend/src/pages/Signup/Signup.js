@@ -36,11 +36,6 @@ function Signup() {
     } catch (error) {
       console.log(error);
       toast.error("Error creating account. Please try again...");
-      setLoading(true);
-      sendThankYouEmail(formData.email);
-      setTimeout(() => {
-        navigate("/profile-one");
-      }, 2000);
     } finally {
       setLoading(false); 
     }
@@ -156,7 +151,7 @@ function Signup() {
                 className="px-8 py-2 rounded font-bold cursor-pointer transition duration-150 ease-linear bg-red-500 text-white hover:bg-red-800"
                 disabled={loading} // Disable button when loading is true
               >
-                {loading ? "Navigating..." : "Create Account"} 
+                {loading ? "Setting Up Your Account..." : "Create Account"} 
               </button>
             </div>
           </form>
