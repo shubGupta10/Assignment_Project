@@ -24,7 +24,7 @@
 <div>
 <h1>Video Demo</h1>
 <p>I've tried my best to make it live or deploy the project, but I can't. Here is the video working of my project on my system:</p>
-<video src="https://github.com/shubGupta10/MERN-Training-Project/assets/132940559/2fca906c-7fff-46e0-8d81-1093ec8c48bf" width="100%" controls></video>
+<video src="https://github.com/shubGupta10/Assignment_Project/assets/132940559/3f69ac02-2917-43de-b12b-a5ed137a3f5b" width="100%" controls></video>
 </div>
 <h1>Installation</h1>
 <h2>Frontend</h2>
