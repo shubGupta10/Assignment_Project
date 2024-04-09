@@ -27,10 +27,6 @@ const userSchema = new mongoose.Schema({
         max: [10, "Password must be 10 characters long"]
     },
 
-    profileImageData: {
-        type: Buffer
-    }
-
 });
 
 export default mongoose.model("User", userSchema);
