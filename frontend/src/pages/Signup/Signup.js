@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../Context/UserContext.js";
 
 function Signup() {
   const { setEmail } = useContext(UserContext);
@@ -26,15 +26,14 @@ function Signup() {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/users/signup",
-        formData
+        formData , {withCredentials: true,}
       );
-      toast.success("Account created successfully!");
       setEmail(formData.email);
       sendThankYouEmail(formData.email);
       navigate("/profile-one");
       toast.success("Account created successfully!", {
         autoClose: 3000, 
-        position: toast.POSITION.TOP_CENTER, 
+        position: toast.POSITION.TOP_RIGHT, 
         hideProgressBar: true, 
       });
     } catch (error) {
