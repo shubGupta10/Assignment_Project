@@ -28,8 +28,9 @@ function Signup() {
         "http://localhost:5000/api/users/signup",
         formData , {withCredentials: true,}
       );
-      setEmail(formData.email);
-      sendThankYouEmail(formData.email);
+      const { email } = response.data;
+      setEmail(email); 
+      sendThankYouEmail(email); 
       navigate("/profile-one");
       toast.success("Account created successfully!", {
         autoClose: 3000, 
