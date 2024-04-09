@@ -22,26 +22,25 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); 
+    setLoading(true);
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/users/signup",
-        formData , {withCredentials: true,}
-      );
+      const response = await axios.post("/api/users/signup", formData, {
+        withCredentials: true
+      });
       const { email } = response.data;
-      setEmail(email); 
-      sendThankYouEmail(email); 
+      setEmail(email);
+      sendThankYouEmail(email);
       navigate("/profile-one");
       toast.success("Account created successfully!", {
-        autoClose: 3000, 
-        position: toast.POSITION.TOP_RIGHT, 
-        hideProgressBar: true, 
+        autoClose: 3000,
+        position: toast.POSITION.TOP_RIGHT,
+        hideProgressBar: true,
       });
     } catch (error) {
       console.log(error);
       toast.error("Error creating account. Please try again...");
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
