@@ -24,7 +24,7 @@
 <div>
 <h1>Video Demo</h1>
 <p>I've tried my best to make it live or deploy the project, but I can't. Here is the video working of my project on my system:</p>
-<video src="/Assignment Project.mp4" width="100%" controls></video>
+<video src="Assignment Project.mp4" width="100%" controls></video>
 </div>
 <h1>Installation</h1>
 <h2>Frontend</h2>
