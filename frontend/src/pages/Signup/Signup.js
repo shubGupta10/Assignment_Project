@@ -26,7 +26,7 @@ function Signup() {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/users/signup",
-        formData , {withCredentials: true,}
+        formData , {withCredentials: true}
       );
       const { email } = response.data;
       setEmail(email); 
