@@ -3,11 +3,12 @@ import cors from "cors"
 import profileRoutes from "./routes/profileRoutes.js"
 import router from "./routes/userRoutes.js";
 import dotenv from "dotenv"
+import bodyParser from "body-parser";
 
 
 const app = express();
 dotenv.config();
-app.use(body-parser.json());
+app.use(bodyParser.json());
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
