@@ -14,7 +14,7 @@
 </ul>
 <h2>Email Service:</h2>
 <ul>
-    <li>Gmail API (to send confirmation email to users)</li>
+    <li>Gmail Service (To send confirmation email to users)</li>
 </ul>
 <h2>Image Storage:</h2>
 <ul>
