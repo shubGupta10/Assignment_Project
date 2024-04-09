@@ -25,8 +25,8 @@ function Signup() {
     setLoading(true); 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/signup",
-        formData , {withCredentials: true}
+        "https://localhost:5000/api/users/signup",
+        formData 
       );
       const { email } = response.data;
       setEmail(email); 
@@ -40,9 +40,7 @@ function Signup() {
     } catch (error) {
       console.log(error);
       toast.error("Error creating account. Please try again...");
-    } finally {
-      setLoading(false); 
-    }
+    } 
   };
 
   const sendThankYouEmail = async (email) => {

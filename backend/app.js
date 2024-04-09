@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
-    methods: ["POST", "GET"],
     credentials: true,
 }));
 
